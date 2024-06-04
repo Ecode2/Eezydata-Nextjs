@@ -63,40 +63,13 @@ export const authOptions: NextAuthOptions = {
 
   callbacks: {
     async jwt({ token, user }) {
-      console.log('jwt callback');
       // Persist the OAuth access_token to the token right after signin
       return { ...token, ...user };
     },
     async session({ session, token }) {
-      console.log('session callback');
       // Send properties to the client, like an access_token from a provider.
       session.user = token as any;
       return session;
     }
   }
 }
-
-/* import type {GetServerSidePropsContext} from "next";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/pages/api/auth/[...nextauth]";
-
-  
-  // Use it in server contexts
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const session = await getServerSession(context.req, context.res, authOptions);
-
-  if (!session) {
-    return{
-      redirect: {
-        destination: "/api/auth/signin",
-        permanent: false,
-      },
-    };
-  }
-
-  return {
-    props: {
-      session,
-    }
-  }
-} */

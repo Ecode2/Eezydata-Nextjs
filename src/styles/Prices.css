@@ -1,0 +1,34 @@
+@tailwind components;
+@tailwind utilities;
+
+
+.price-bar {
+    @apply rounded-xl border-mountain-meadow-200 dark:border-mountain-meadow-400
+     bg-mountain-meadow-50 dark:bg-mountain-meadow-600
+    border flex flex-col flex-wrap list-none w-full py-4 px-6 gap-y-4
+}
+.space {
+    @apply gap-y-10
+}
+
+/* Price Categories */
+.category {
+    @apply grid justify-between grid-cols-2 grid-rows-1 w-full text-center text-lg font-bold /* text-mountain-meadow-500 dark:text-mountain-meadow-800 */
+}
+.sub-category {
+    @apply bg-mountain-meadow-200 py-2 px-2 rounded-xl dark:bg-mountain-meadow-400 
+    grid grid-cols-4 justify-items-center items-center w-full max-w-full 
+    text-center text-lg font-bold gap-y-4
+}
+.tv-sub-category {
+    @apply bg-mountain-meadow-200 py-2 px-2 rounded-xl dark:bg-mountain-meadow-400 
+    grid grid-cols-3 justify-items-center items-center w-full max-w-full 
+    text-center text-lg font-bold gap-y-4
+}
+
+.price-icon {
+    @apply h-fit w-fit p-2 bg-mountain-meadow-100 dark:bg-mountain-meadow-200 rounded-lg;
+}
+.two-price-flex {
+    @apply flex flex-row justify-between items-center flex-nowrap
+}
