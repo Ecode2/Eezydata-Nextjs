@@ -12,10 +12,12 @@ export default function NavBar(){
         <nav className="z-50 bg-gray-900 w-screen h-10 fixed top-0 left-0  px-4 flex flex-row flex-nowrap justify-between items-center">
 
             <h1 className="text-green-700">EezyData</h1>
-            <div className="flex w-1/4 flex-row flex-nowrap justify-around items-center">
+            <div className="flex flex-row flex-nowrap justify-center gap-4 items-center">
                 {session?.user ? ( 
                     <>
-                        <p className="text-green-700"> {session.user.username} </p>
+                        <p className="text-green-700"> 
+                            <Link href={`/${session.user.username}`}>{session.user.username}</Link> 
+                         </p>
                         <Link className="text-red-600" href="/api/auth/signout">Logout</Link>
                         {/*<button className="text-red-600" onClick={() => signOut()}>Logout</button>*/}
                     </>

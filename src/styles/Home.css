@@ -4,13 +4,13 @@
 
 /* General styles */
 .max-width {
-  @apply max-w-screen-sm
+  @apply max-w-[500px]
 }
 
 /* Top user NaBarv */
 .user-contain {
   @apply top-0 fixed w-full h-14 min-h-14 max-h-16
-    flex items-center justify-center px-1 max-w-screen-sm
+    flex items-center justify-center px-1 max-w-[500px]
 }
 .user-bar {
   @apply rounded-xl w-full h-full grid grid-flow-col 
@@ -95,7 +95,7 @@
 
 /* Menu Footer */
 .menu-contain {
-  @apply  flex  w-full items-center justify-center max-w-screen-sm
+  @apply  flex  w-full items-center justify-center max-w-[500px]
     backdrop-filter bg-opacity-75 px-1 fixed bottom-0 h-14 min-h-14 max-h-16
   
 }

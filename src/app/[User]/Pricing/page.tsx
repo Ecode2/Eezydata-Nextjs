@@ -107,6 +107,25 @@ export default function Pricing({params}: {params: {User: string} }) {
 
     }, [replace, pathname]);
 
+    const handleModalClose = () => {
+        setData(null)
+        replace(`${pathname}`);
+    }
+    const floating_modal: Modal.Styles = {
+        overlay: {
+          backgroundColor: "transparent",
+          position: "absolute",
+          display: "flex",
+          flexFlow: "row wrap",
+          justifyContent: "center",
+          paddingTop: "10%",
+          height: "100vh",
+          width: "100vw",
+        },
+        content: {
+            padding: "20px",
+        },
+      }
 
     return (
     <section className="w-full h-screen max-w-screen-sm items-center flex flex-col px-2 flex-wrap pt-24">
@@ -145,12 +164,18 @@ export default function Pricing({params}: {params: {User: string} }) {
                                         key={index} className="price-icon">
                                         <subService.serviceIcon className='icon'/>
                                     </li>
-                                    <Modal 
-                                        className={"absolute w-2/4 h-12 max-w-screen-sm"} 
-                                        isOpen={data ? true : false} >
+                                    <Modal  
+                                        className={"sm:w-[70%] md:w-[60%] lg:w-[45%] w-[93%] h-[61%] border border-mountain-meadow-300 rounded-2xl bg-mountain-meadow-100 dark:bg-mountain-meadow-600 max-w-screen-sm text-slate-700"}
+                                        isOpen={data ? true : false}
+                                        ariaHideApp={false}
+                                        onRequestClose={handleModalClose}
+                                        contentLabel="Modal"
+                                        style={floating_modal}
+                                        >
                                         <h1>WHAT THE HELL</h1>
                                         <div>
                                             Hello World
+                                            {subService.serviceName}
                                         </div>
                                     </Modal>
                                 </>
